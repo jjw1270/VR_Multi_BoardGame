@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 public class PlayerCtrl : MonoBehaviour
 {
     private GameObject cursorImage;
-    private GameObject ReadyGuide;
+    //private GameObject ReadyGuide;
     private Vector3 screenCenter;
     private bool isTriggerd;
     private string myTag;
-    
+
     void Start()
     {
+        //ReadyGuide = GameObject.Find("ReadyGuide");
+        cursorImage = GameObject.Find("BTNEnable");
+
         screenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
         myTag = this.transform.tag;
-        Debug.Log(myTag);
-        cursorImage = GameObject.Find("BTNEnable");
+        
         cursorImage.SetActive(false);
-        ReadyGuide = GameObject.Find("ReadyGuide");
     }
-
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
@@ -41,7 +42,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void btnCtrl(Transform hit){
         if(hit.parent.name == "BTN"){
-            ReadyGuide.SetActive(false);
+            //ReadyGuide.SetActive(false);
             hit.GetComponent<BTNCtrl>().isClick = true;
         }
     }

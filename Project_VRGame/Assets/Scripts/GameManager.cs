@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         Invoke("playerSpawn",0.5f);
     }
     void Update(){
+        Debug.Log(isReady1);
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
         // foreach(bool isready in isReady){
@@ -58,7 +59,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     void isFull(int f){
         if(f == 1){
             isFull1 = true;
-            
         }
         else{
             isFull2 = true;
