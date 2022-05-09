@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 266467473}
   - component: {fileID: 266467472}
   m_Layer: 5
-  m_Name: BTN
+  m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 1768300000}
   - component: {fileID: 1768299999}
   m_Layer: 5
-  m_Name: BTNEnable
+  m_Name: CursorEnable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

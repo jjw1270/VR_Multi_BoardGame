@@ -12,18 +12,30 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool isFull2;
     public static bool isReady1 = false;  //버튼이 눌렸는지
     public static bool isReady2 = false;
-    bool isAllReady = false;
+    public static bool isAllReady = false;
+    private bool isSelectGame = false;
+    private GameObject selectCanvas;
+    private GameObject canvas1;
+    private GameObject canvas2;
+    public static int player1 = -99;
+    public static int player2 = -99;
+    private bool playGame1;
+    private bool playGame2;
+    
+    public int[] Games;
 
     void Awake(){
         pv = this.GetComponent<PhotonView>();
     }
 
     void Start(){
+        selectCanvas = GameObject.Find("SelectGameCanvas");
+        canvas1 = selectCanvas.transform.GetChild(0).gameObject;
+        canvas2 = selectCanvas.transform.GetChild(1).gameObject;
         PhotonNetwork.IsMessageQueueRunning = true;
         Invoke("playerSpawn",0.5f);
     }
     void Update(){
-        //Debug.Log(isReady1);
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
 
@@ -33,7 +45,26 @@ public class GameManager : MonoBehaviourPunCallbacks
             isAllReady = false;
 
         if(isAllReady){
-            Debug.Log("12312321");
+            isSelectGame = true;
+            canvas1.SetActive(true);
+            canvas2.SetActive(true);
+        }
+
+        if(isSelectGame){
+            isAllReady = false;
+            selectGame();
+        }
+        else{
+            canvas1.SetActive(false);
+            canvas2.SetActive(false);
+        }
+
+        if(player1 > 0 && player2 > 0){
+            isSelectGame = false;
+            if(playGame1);
+                //Game1
+            else;
+                //Game2
         }
     }
 
@@ -51,6 +82,31 @@ public class GameManager : MonoBehaviourPunCallbacks
             GameObject player =  PhotonNetwork.Instantiate("Player", spawnPoint.transform.position, spawnPoint.transform.rotation);
             player.tag = "2";
             pv.RPC("isFull", RpcTarget.AllBufferedViaServer, 2);
+        }
+    }
+
+    void selectGame(){
+        if(player1 < 0 || player2 < 0) return;
+        if(player1 == player2){
+            if(player1 == 1){
+                playGame1 = true;
+                playGame2 = false;
+            }
+            else{
+                playGame2 = true;
+                playGame1 = false;
+            }
+        }
+        else{
+            int r = Random.Range(0, 2);
+            if(r == 1){
+                playGame1 = true;
+                playGame2 = false;
+            }
+            else{
+                playGame2 = true;
+                playGame1 = false;
+            }
         }
     }
 

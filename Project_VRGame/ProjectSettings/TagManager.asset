@@ -10,6 +10,7 @@ TagManager:
   - Exit
   - BTN
   - GM
+  - SelectGame
   layers:
   - Default
   - TransparentFX

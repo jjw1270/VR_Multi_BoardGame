@@ -6,16 +6,14 @@ using Photon.Pun;
 public class PlayerCtrl : MonoBehaviour
 {
     private GameObject cursorImage;
-    //private GameObject ReadyGuide;
     private Vector3 screenCenter;
     private bool isTriggerd;
     private string myTag;
 
     void Start()
     {
-        //ReadyGuide = GameObject.Find("ReadyGuide");
-        cursorImage = GameObject.Find("BTNEnable");
-
+        cursorImage = GameObject.Find("CursorEnable");
+        
         screenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
         myTag = this.transform.tag;
         
@@ -31,19 +29,35 @@ public class PlayerCtrl : MonoBehaviour
             if(hit.transform.CompareTag(myTag)){  //자신의 것만 활성화
                 cursorImage.SetActive(true);
                 if(isTriggerd){
-                    btnCtrl(hit.transform);
+                    ClickEvent(hit.transform);
                 }
             }
             else{
                 cursorImage.SetActive(false);
             }
-        }        
+        }
+
     }
 
-    void btnCtrl(Transform hit){
+    void ClickEvent(Transform hit){
         if(hit.parent.name == "BTN"){
-            //ReadyGuide.SetActive(false);
             hit.GetComponent<BTNCtrl>().isClick = true;
         }
+        if(hit.parent.CompareTag("SelectGame")){
+            hit.GetComponent<Image>().color = Color.blue;
+            if(hit.name == "Game1"){
+                if(myTag == "1")
+                    GameManager.player1 = 1;
+                else
+                    GameManager.player2 = 1;
+            }
+            else{
+                if(myTag == "1")
+                    GameManager.player1 = 2;
+                else
+                    GameManager.player2 = 2;
+            }
+        }
+
     }
 }
