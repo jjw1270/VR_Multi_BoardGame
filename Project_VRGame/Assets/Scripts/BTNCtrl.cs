@@ -8,12 +8,12 @@ public class BTNCtrl : MonoBehaviourPunCallbacks
     PhotonView pv;
     public bool isClick;
     public bool isGreen;
-    GameManager gm;
+    string myTag;
     void Awake(){
         pv = this.GetComponent<PhotonView>();
     }
     void Start(){
-        gm = transform.Find("GameManager").GetComponent<GameManager>();
+        myTag = this.tag;
     }
     void Update(){
         if(isClick){
@@ -30,10 +30,19 @@ public class BTNCtrl : MonoBehaviourPunCallbacks
     }
     [PunRPC]
     void BtnColor(int j){
-        if(j == 1)
+        if(j == 1){
             this.GetComponent<MeshRenderer>().material.color = Color.green;
-            
-        else
+            if(myTag == "1")
+                GameManager.isReady1 = true;
+            else
+                GameManager.isReady2 = true;
+        }
+        else{
             this.GetComponent<MeshRenderer>().material.color = Color.red;
+            if(myTag == "1")
+                GameManager.isReady1 = false;
+            else
+                GameManager.isReady2 = false;
+        }
     }
 }

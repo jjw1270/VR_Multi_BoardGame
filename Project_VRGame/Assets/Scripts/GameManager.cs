@@ -8,11 +8,12 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     Transform spawnPoints;
     PhotonView pv;
-    public bool isFull1;
+    public bool isFull1;  //자리가 찼는지
     public bool isFull2;
-    public bool isReady1;
-    public bool isReady2;
+    public static bool isReady1 = false;  //버튼이 눌렸는지
+    public static bool isReady2 = false;
     bool isAllReady = false;
+
     void Awake(){
         pv = this.GetComponent<PhotonView>();
     }
@@ -22,19 +23,17 @@ public class GameManager : MonoBehaviourPunCallbacks
         Invoke("playerSpawn",0.5f);
     }
     void Update(){
-        Debug.Log(isReady1);
+        //Debug.Log(isReady1);
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
-        // foreach(bool isready in isReady){
-        //     if(!isready){
-        //         isAllReady = false;
-        //         break;
-        //     }
-        //     else
-        //         isAllReady = true;
-        // }
+
+        if(isReady1 && isReady2)
+            isAllReady = true;
+        else
+            isAllReady = false;
+
         if(isAllReady){
-            //게임시작
+            Debug.Log("12312321");
         }
     }
 
