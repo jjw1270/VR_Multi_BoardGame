@@ -26,7 +26,7 @@ public class PlayerCtrl : MonoBehaviour
         isTriggerd = Input.GetMouseButtonDown(0);
 
         if(Physics.Raycast(ray, out hit, 500f)){
-            if(hit.transform.CompareTag(myTag)){  //자신의 것만 활성화
+            if(hit.transform.CompareTag(myTag) || hit.transform.CompareTag("1and2")){  //자신의 것만 활성화
                 cursorImage.SetActive(true);
                 if(isTriggerd){
                     ClickEvent(hit.transform);

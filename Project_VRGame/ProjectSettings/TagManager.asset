@@ -11,6 +11,7 @@ TagManager:
   - BTN
   - GM
   - SelectGame
+  - 1and2
   layers:
   - Default
   - TransparentFX
