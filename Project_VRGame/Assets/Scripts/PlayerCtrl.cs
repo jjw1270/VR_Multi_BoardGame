@@ -9,7 +9,6 @@ public class PlayerCtrl : MonoBehaviour
     private Vector3 screenCenter;
     private bool isTriggerd;
     private string myTag;
-
     void Start()
     {
         cursorImage = GameObject.Find("CursorEnable");
@@ -57,6 +56,9 @@ public class PlayerCtrl : MonoBehaviour
                 else
                     GameManager.player2 = 2;
             }
+        }
+        if(hit.parent.parent.name == "Points"){
+            
         }
 
     }

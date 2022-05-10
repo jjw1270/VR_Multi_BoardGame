@@ -19,10 +19,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     private GameObject canvas2;
     public static int player1 = -99;
     public static int player2 = -99;
-    private bool playGame1;
-    private bool playGame2;
+    public static bool playGame1;
+    public static bool playGame2;
     
-    public int[] Games;
+    GameObject Game1;
+    GameObject Game2;
 
     void Awake(){
         pv = this.GetComponent<PhotonView>();
@@ -32,6 +33,10 @@ public class GameManager : MonoBehaviourPunCallbacks
         selectCanvas = GameObject.Find("SelectGameCanvas");
         canvas1 = selectCanvas.transform.GetChild(0).gameObject;
         canvas2 = selectCanvas.transform.GetChild(1).gameObject;
+        Game1 = GameObject.Find("TicTacToe");
+        //Game1.SetActive(false);
+        //Game2 = GameObject.Find("TargetFalling");
+        //Game2.SetActive(false);
         PhotonNetwork.IsMessageQueueRunning = true;
         Invoke("playerSpawn",0.5f);
     }
@@ -61,10 +66,10 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if(player1 > 0 && player2 > 0){
             isSelectGame = false;
-            if(playGame1);
-                //Game1
-            else;
-                //Game2
+            if(playGame1)
+                Game1.SetActive(true);
+            else
+                Game2.SetActive(true);
         }
     }
 
