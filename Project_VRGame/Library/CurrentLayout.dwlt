@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 324}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,10 +43,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 597
-  m_MinSize: {x: 917, y: 274}
-  m_MaxSize: {x: 22012, y: 10024}
+  m_MinSize: {x: 915, y: 274}
+  m_MaxSize: {x: 22010, y: 10024}
   vertical: 1
-  controlID: 69
+  controlID: 29
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -66,8 +66,8 @@ MonoBehaviour:
     y: 0
     width: 280
     height: 597
-  m_MinSize: {x: 277, y: 74}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -147,7 +147,7 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 647
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 324}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -194,10 +194,10 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 597
-  m_MinSize: {x: 917, y: 274}
-  m_MaxSize: {x: 22012, y: 10024}
+  m_MinSize: {x: 915, y: 274}
+  m_MaxSize: {x: 22010, y: 10024}
   vertical: 0
-  controlID: 70
+  controlID: 30
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,8 +268,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 72.66667
+    x: 8
+    y: 81
     width: 555
     height: 577
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -382,23 +382,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 8c290000
       m_LastClickedID: 0
-      m_ExpandedIDs: 38e2ffff
+      m_ExpandedIDs: 32dbffff3ce6ffffa8f1ffffd0fbffffec700000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: btn1
+        m_OriginalName: btn1
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 28460
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -480,7 +480,8 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -492,7 +493,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 042b0000
     m_LastClickedID: 11012
-    m_ExpandedIDs: 00000000c25a00007c5c0000c05d00007c5f000082610000ae610000fe6100007a64000078650000866700002a680000da68000032690000fe6b00004a6c0000c26d0000a06e0000a06f0000b86f0000a8700000b670000028710000627100002c720000da7f0000dc7f0000de7f0000e07f0000e27f0000
+    m_ExpandedIDs: 00000000822d0000422f00008630000044320000503400007c340000d03400000c38000010390000223b0000c63b0000763c0000d03c0000aa3f0000f63f000072410000564200005843000070430000604400006e440000e24400001c450000e64500000056000002560000045600000656000008560000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -517,10 +518,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 707}
+    scrollPos: {x: 0, y: 709}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000c25a00007c5c0000c05d00007c5f000082610000ae610000fe6100007a64000078650000866700002a680000da68000032690000fe6b00004a6c0000c26d0000a06e0000a06f0000b86f0000a8700000b670000028710000627100002c720000da7f0000dc7f0000de7f0000e07f0000e27f0000
+    m_ExpandedIDs: ffffffff00000000822d0000422f00008630000044320000503400007c340000d03400000c38000010390000223b0000c63b0000763c0000d03c0000aa3f0000f63f000072410000564200005843000070430000604400006e440000e24400001c450000e64500000056000002560000045600000656000008560000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,9 +642,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.3574157, y: -0.2878707, z: 0.116820216, w: 0.88075966}
   m_Size:
-    m_Target: 7.603566
+    m_Target: 11.64373
     speed: 2
-    m_Value: 7.603566
+    m_Value: 11.64373
   m_Ortho:
     m_Target: 1
     speed: 2

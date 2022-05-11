@@ -58,7 +58,7 @@ public class PlayerCtrl : MonoBehaviour
             }
         }
         if(hit.parent.parent.name == "Points"){
-            
+            Debug.Log("FFF");
         }
 
     }
