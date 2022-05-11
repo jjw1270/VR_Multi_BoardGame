@@ -26,6 +26,10 @@ public class BTNCtrl : MonoBehaviourPunCallbacks
                 pv.RPC("BtnColor", RpcTarget.AllBufferedViaServer, 0);
             }
             isClick = false;
+
+            if(this.name == "TTT_ResetBTN"){
+                //TTT게임 종료, 다시 SelectGame
+            }
         }
     }
     [PunRPC]
